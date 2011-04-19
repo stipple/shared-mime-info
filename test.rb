@@ -1,9 +1,9 @@
 # cvs -d:pserver:anoncvs@anoncvs.freedesktop.org:/cvs/mime co shared-mime-info/tests
 
 $: << 'lib'
-require 'lib/shared-mime-info'
+require File.expand_path('lib/shared-mime-info', File.dirname(__FILE__))
 
-File.foreach('shared-mime-info/tests/list') do |line|
+File.foreach(File.expand_path('shared-mime-info/tests/list', File.dirname(__FILE__))) do |line|
   next if line =~ /^#/ or line =~ /^$/
   line.chomp!
   file, type, test = line.split ' ', 3
