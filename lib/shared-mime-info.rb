@@ -287,7 +287,7 @@ module MIME
   end
 
   xdg_data_home = ENV['XDG_DATA_HOME'] || "#{ENV['HOME']}/.local/share"
-  xdg_data_dirs = ENV['XDG_DATA_DIRS'] || "/usr/local/share/:/usr/share"
+  xdg_data_dirs = ENV['XDG_DATA_DIRS'] || "/usr/local/share:/usr/share"
 
   @mime_dirs = (xdg_data_home + ':' + xdg_data_dirs).split(':').collect { |dir|
     "#{dir}/mime"
